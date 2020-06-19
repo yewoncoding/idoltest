@@ -1,0 +1,351 @@
+
+body {
+  font-family: 'Jua', sans-serif !important;
+  background-color: #ffffff;
+}
+
+.file-upload-content {
+  display: none;
+  text-align: center;
+}
+
+.file-upload-input {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  outline: none;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.image-upload-wrap {
+  border: 1px dashed #35465d;
+  position: relative;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: #f8f9fa;
+    margin: 10%;
+}
+
+.image-dropping,
+.image-upload-wrap:hover {
+  background-color: #ffffff;
+  border: 1px dashed #35465d;
+}
+
+.image-title-wrap {
+  padding: 15px;
+  color: #222;
+}
+
+.drag-text {
+  text-align: center;
+}
+
+.drag-text h3 {
+  font-weight: 100;
+  text-transform: uppercase;
+  color: #343a40;
+  padding: 20px 0;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.file-upload-image {
+  max-height: 200px;
+  max-width: 200px;
+  margin: auto;
+  padding: 20px;
+}
+
+.remove-image {
+  width: 200px;
+  margin: 0;
+  color: #fff;
+  background: #cd4535;
+  border: none;
+  padding: 10px;
+  border-radius: 4px;
+  border-bottom: 4px solid #b02818;
+  transition: all .2s ease;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.remove-image:hover {
+  background: #c13b2a;
+  color: #ffffff;
+  transition: all .2s ease;
+  cursor: pointer;
+}
+
+.remove-image:active {
+  border: 0;
+  transition: all .2s ease;
+}
+
+.nav-distance {
+    padding: 2.1% 7.7%
+}
+
+.navbar-light .navbar-brand {
+    line-height: 1.68;
+    text-align: left;
+    color: #35465d;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: #ffffff;
+}
+
+.section {
+    margin-top: 100px;
+}
+
+.title {
+    line-height: 1.67;
+    text-align: center;
+    color: #35465d;
+}
+
+.subtitle {
+    line-height: 1.53;
+    text-align: center;
+    color: #35465d;
+}
+
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 600px) {
+    html{
+        font-size: 10px;
+    }
+    .navbar-brand {
+        font-size: 2rem;
+    }
+}
+
+.youtube-link {
+    font-size: 1rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #f73737;
+    padding-bottom: 5%;
+}
+
+.youtube-link:hover {
+    font-size: 1rem;
+    line-height: 1.71;
+    text-align: center;
+    color: #f73737;   
+}
+
+.container {
+    width: 90%;
+}
+
+.file-upload {
+    border: solid 1.5px #f6f7fa;
+    border-radius: 10px;
+    background-color: #f6f7fa;
+    padding: 20px;
+    margin-bottom: 50px;
+    width: 70%;
+}
+
+.upload {
+    width: 70px;
+}
+
+.bar-container {
+  height: 2.7rem;
+}
+.sm-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(255, 102, 153, 0.2);
+}
+.sm-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 102, 153, 1);
+}
+.jyp-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(000, 204, 255, 0.2);
+}
+.jyp-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(000, 204, 255, 1);
+}
+.cube-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(102, 204, 102, 0.2);
+}
+.cube-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(102, 204, 102, 1);
+}
+.yg-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  background-color: rgba(255, 153, 000, 0.2);
+}
+.yg-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 2rem;
+  border-radius: 10px;
+  background-color: rgba(255, 153, 000, 1);
+}
+
+.percent-text {
+  font-size: 1rem;
+  color: #ffffff;
+}
+
+.idol-label {
+    width: 13%;
+    text-align: left;
+    height: 2rem;
+}
+
+#label-container {
+    width: 80%;
+    margin: 0 auto;
+}
+.result-message {
+    font-size: 2rem;
+}
+
+#loading { display:none; } 
+body.busy .spinner-grow { display:block !important; }
+
+#label-container {
+    width: 80%;
+    margin: 0 auto;
+} 
+
+.try-again-btn {
+  border-radius: 40px;
+  border: solid 1.5px #35465d;
+  background-color: #35465d;
+}
+
+.try-again-text {
+  display: block;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #ffffff;
+  padding: 4px 15px;
+}
+
+.at-share-btn-elements {
+    padding-top: 20px;
+}
+
+.text-center {
+    font-size: 15px;
+}
+
+.idol-explain {
+    font-size: 1.5rem;
+}
+
+.sm-idol-title {
+    color: #FF6699;
+}
+.sm-idol-celeb {
+    color: #FF6699;
+    font-size: 1.2rem;
+}
+.jyp-idol-title {
+    color: #00CCFF;
+}
+.jyp-idol-celeb {
+    color: #00CCFF;
+    font-size: 1.2rem;
+}
+.cube-idol-title {
+    color: #66CC66;
+}
+.cube-idol-celeb {
+    color: #66CC66;
+    font-size: 1.2rem;
+}
+.yg-idol-title {
+    color: #FF9900;
+}
+.yg-idol-celeb {
+    color: #FF9900;
+    font-size: 1.2rem;
+}
+
+/* gender*/
+input#gender {
+    display: none;
+    /*checkbox 사라짐*/
+}
+
+label {
+    cursor: pointer;
+    display: inline-block;
+    width: 65px;
+    height: 31px;
+    box-shadow: 0 0 0 5px #e5e9ea inset;
+    border-radius: 40px;
+    position: relative;
+    /*여자 남자 사이에 박스가 생김*/
+}
+
+
+.knob {
+    position: absolute;
+    width: 31px;
+    top: 0;
+    left: 0;
+    height: 31px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px #333333 inset;
+    background-color: #FFFFFF;
+    transition: 0.3s;
+}
+
+input:checked + label > .knob {
+    box-shadow: 0 0 0 5px #333333 inset;
+    background-color: #FFFFFF;
+    transform: translateX(35px);
+    
+}

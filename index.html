@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>아이돌 테스트</title>
+    <meta name="title" content="아이돌 테스트">
+    <meta name="subject" content="내가 아이돌이라면 어떤 소속사가 어울릴까?">
+    <meta name="keywords" content="아이돌 소속사 테스트, 인공지능 테스트, 얼굴상, 얼굴상 테스트, 나와 어울리는 소속사, 소속사 찾기, 얼굴로 보는 아이돌상, 얼굴 아이돌, 얼굴 소속사, 아이돌얼굴, idolface, sm상, jyp상, yg상, cube상, 인공지능 아이돌상, AI 얼굴상, AI 아이돌상">
+    <meta name="author" content="최예원">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ee848684ffbdf7a"></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light nav-distance">
+        <a class="navbar-brand" href="/idoltest/index.html">아이돌 테스트</a>
+    </nav>
+    <section class="section">
+        <h1 class="title">사진으로 해보는 아이돌 테스트</h1>
+        <h2 class="subtitle">나에게 어울리는 소속사는?</h2>
+    </section>
+    <section class="youtube">
+        <div class="container mt-4 youtube-cover">
+            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link d-flex flex-row-reverse">by 조코딩 유튜브 채널</a>
+        </div>
+    </section>
+    <h3 class="pb-2 d-flex justify-content-center">성별 선택</h3>
+    <section class="d-flex justify-content-center">
+        <p class="d-flex align-items-center pr-3">여자</p>
+        <div>
+            <input type="checkbox" id="gender">
+            <label for="gender">
+                <span class="knob">
+                    <i></i>
+                </span>
+            </label>
+        </div>
+        <p class="d-flex align-items-center pl-3">남자</p>
+    </section>
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <div class="container file-upload">
+        <div class="image-upload-wrap">
+            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+            <div class="drag-text">
+                <img src="image/upload.png" class=" mt-5 upload">
+                <h3 class=" pb-5 upload-text">사진 선택하기
+                    <br>choose photo</h3>
+            </div>
+        </div>
+        <div class="file-upload-content">
+            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+
+            <div id="loading" class="animated bounce">
+                <div class="spinner-grow" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <p class="text-center">지금 당신과 어울리는 소속사를 분석중입니다 </p>
+            </div>
+
+            <p class="result-message"></p>
+            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+
+            <!-- Go to www.addthis.com/dashboard to customize your tools -->
+            <div class="addthis_inline_share_toolbox_qglp"></div>
+
+            <div class="image-title-wrap">
+                <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
+                    <span class="try-again-text">다른 사진으로 또 해보기</span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <div id="webcam-container"></div>
+    <div id="disqus_thread"></div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://yewon.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.image-upload-wrap').hide();
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+                    $('.image-title').html(input.files[0].name);
+                    $('#loading').show();
+                };
+                reader.readAsDataURL(input.files[0]);
+                init().then(() => {
+                    predict();
+                    $('#loading').hide();
+                });
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function() {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function() {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script type="text/javascript">
+        let URL;
+        const urlMale = "https://teachablemachine.withgoogle.com/models/ueLYE-jxx/";
+        const urlFemale = "https://teachablemachine.withgoogle.com/models/4J1fM4hG7/";
+        let model, webcam, labelContainer, maxPredictions;
+        async function init() {
+            if (document.getElementById("gender").checked){
+                URL = urlMale;
+            } else {
+                URL = urlFemale;
+            }
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) {
+                var element = document.createElement("div")
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
+            }
+        }
+        async function predict() {
+            var image = document.getElementById("face-image")
+            const prediction = await model.predict(image, false);
+            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            // 여기부터 홈페이지에서 쓴 것
+            var resultTitle, resultExplain, resultCeleb;
+            if (document.getElementById("gender").checked) {
+                switch (prediction[0].className) {
+                case "sm":
+                    resultTitle = "수학의 정석 보다 좋은 미남의 정석!"
+                    resultExplain = "이목구비가 뚜렷하고 반듯하게 생긴 당신은 혹시 얼굴 황금비율? SM에서 두 팔 벌려 환영할 것 같아요. 혹시 거리를 지나다닐 때 모두 돌아보지 않나요? 자꾸 거울이 보고 싶지 않나요? 아마도 얼굴에 잘생김이 묻어서 그럴지도 몰라요."
+                    resultCeleb = "SM상 대표 연예인 : 최시원, 김희철, 수호, 찬열"
+                    break;
+                case "jyp":
+                    resultTitle = "갯벌보다 빠져나오기 힘들다는 개미지옥!"
+                    resultExplain = "당신은 JYP에서 태어난 듯한 유전자를 가지고 계시네요. 이 유전자로 말할 것 같으면 씹덕과 멋짐을 섞어 놓은 유전자예요. 어떻게 귀여운데 멋있죠? 당신의 눈웃음을 보면 여자들의 심장은 하트비트. "
+                    resultCeleb = "JYP상 대표 연예인 : 비, 준호, JB"
+                    break;
+                case "yg":
+                    resultTitle = "여름에도 땀 대신 간지를 흘리는 당신!"
+                    resultExplain = "그냥 걷고 있을 뿐인데 왠지 YG 사옥으로 가는 것처럼 보여요. 간지라는 단어가 존재하는 이유는 당신을 묘사하기 위해서가 아닐까요? 또한 당신은 볼수록 더 보고 싶은 매력을 가졌네요. 힙하다 힙해!"
+                    resultCeleb = "YG상 대표 연예인 : 지드래곤, 송민호, 최현석"
+                    break;
+                case "cube":
+                    resultTitle = "모든 여성의 마음속에 한자리 차지하는 당신!"
+                    resultExplain = "현실에 있을 것 같지만 없는 얼굴을 가졌네요. 거기다 병약미, 퇴폐미, 소년미까지 뭐 하나 안 갖춘 게 없네요. 사진만 찍었다 하면 남친짤로 변하는 당신은 누가 봐도 CUBE상! "
+                    resultCeleb = "CUBE상 대표 연예인 : 윤두준, 용준형, 육성재, 이던"
+                    break;
+                default:
+                    resultTitle = ""
+                    resultExplain = "일치하는 소속사를 찾지 못했습니다."
+                    resultCeleb = ""
+                
+            }
+        } else {
+            switch (prediction[0].className) {
+                case "sm":
+                    resultTitle = "이수만이 박수치며 환영한다는 수박상!"
+                    resultExplain = "하얀 피부와 부드러운 인상, 청순한 분위기까지 가진 당신은 사슴상이기도 하고 토끼상이기도 하네요. SM 소속이라고 해도 믿겠어요. 특유의 분위기 덕분에 당신은 어디서나 인기쟁이일 것 같아요."
+                    resultCeleb = "SM상 대표 연예인 : 태연, 윤아, 아이린, 예리"
+                    break;
+                case "jyp":
+                    resultTitle = "JYP 캐스팅 매니저님 여기예요!"
+                    resultExplain = "정석 미녀가 아닐지라도 돋보이는 얼굴을 가진 당신. 순수하면서도 귀여운 매력을 가졌네요. 봐도 봐도 매력의 끝은 보이지 않네요. 언제 어디서 캐스팅 매니저가 당신을 캐스팅할지 몰라요!"
+                    resultCeleb = "JYP상 대표 연예인 : 소희, 수지, 예지, 나연"
+                    break;
+                case "yg":
+                    resultTitle = "흔치않은 매력적인 얼굴의 소유자!"
+                    resultExplain = "당신은 고급스러우면서도 개성 있는 얼굴을 가졌네요. 당신만의 아우라는 왠지 부잣집 아가씨 혹은 도도한 고양이를 연상시켜요. 당신의 매력에 한 번 빠지면 헤어나기 힘들 것 같아요. "
+                    resultCeleb = "YG상 대표 연예인 : 제니, 씨엘, 엘라(아역), 김희정(배우)"
+                    break;
+                case "cube":
+                    resultTitle = "한 줄로 설명하기 힘든 매력 버무리!"
+                    resultExplain = "화려한 듯 귀여운 게 가능하다니요? 한 가지만 하기 힘들어서 전부 다 가져버린 당신의 매력은 도대체 몇 가지인가요? 볼매라는 말은 당신을 위해 생긴 단어인 것 같아요."
+                    resultCeleb = "CUBE상 대표 연예인 : 현아, 수진, 유진"
+                    break;
+                default:
+                    resultTitle = ""
+                    resultExplain = "일치하는 소속사를 찾지 못했습니다."
+                    resultCeleb = ""
+            }
+        }
+            var title = "<div class='" + prediction[0].className + "-idol-title'>" + resultTitle + "</div>"
+            var explain = "<div class='idol-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + prediction[0].className + "-idol-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+            $('.result-message').html(title + explain + celeb);
+            var barWidth;
+            for (let i = 0; i < maxPredictions; i++) {
+                if (prediction[i].probability.toFixed(2) > 0.1) {
+                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                    barWidth = "4%"
+                } else {
+                    barWidth = "2%"
+                }
+                var labelTitle;
+                switch (prediction[i].className) {
+                    case "sm":
+                        labelTitle = "SM"
+                        break;
+                    case "jyp":
+                        labelTitle = "JYP"
+                        break;
+                    case "yg":
+                        labelTitle = "YG"
+                        break;
+                    case "cube":
+                        labelTitle = "CUBE"
+                        break;
+                    default:
+                        labelTitle = "알수없음"
+                }
+                var label = "<div class='idol-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+        }
+    </script>
+
+</body>
+
+<!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+</html>
