@@ -114,7 +114,7 @@ body {
 .title {
     line-height: 1.67;
     text-align: center;
-    color: #35465d;
+    color: #009966;
 }
 
 .subtitle {
@@ -137,7 +137,7 @@ body {
     font-size: 1rem;
     line-height: 1.71;
     text-align: center;
-    color: #f73737;
+    color: #FFCC33;
     padding-bottom: 5%;
 }
 
@@ -145,11 +145,16 @@ body {
     font-size: 1rem;
     line-height: 1.71;
     text-align: center;
-    color: #f73737;   
+    color: #FFCC33;   
+}
+
+.youtube {
+    text-align: center;
+    margin-bottom: 3%;
 }
 
 .container {
-    width: 90%;
+    width: 80%;
 }
 
 .file-upload {
@@ -157,7 +162,7 @@ body {
     border-radius: 10px;
     background-color: #f6f7fa;
     padding: 20px;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 70%;
 }
 
@@ -328,8 +333,8 @@ input#gender {
 label {
     cursor: pointer;
     display: inline-block;
-    width: 65px;
-    height: 31px;
+    width: 45px;
+    height: 23px;
     box-shadow: 0 0 0 5px #e5e9ea inset;
     border-radius: 40px;
     position: relative;
@@ -339,10 +344,10 @@ label {
 
 .knob {
     position: absolute;
-    width: 31px;
+    width: 23px;
     top: 0;
     left: 0;
-    height: 31px;
+    height: 23px;
     border-radius: 50%;
     box-shadow: 0 0 0 5px #333333 inset;
     background-color: #FFFFFF;
@@ -352,8 +357,12 @@ label {
 input:checked + label > .knob {
     box-shadow: 0 0 0 5px #333333 inset;
     background-color: #FFFFFF;
-    transform: translateX(35px);
+    transform: translateX(22px);
     
+}
+
+.gender-name {
+    font-size: 1.5rem
 }
 
 .ad-kakao {
