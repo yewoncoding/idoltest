@@ -101,6 +101,12 @@ body {
     border-color: #ffffff;
 }
 
+.brand {
+    line-height: 1.68;
+    text-align: center;
+    color: #35465d; 
+}
+
 .section {
     margin-top: 100px;
 }
@@ -349,3 +355,9 @@ input:checked + label > .knob {
     transform: translateX(35px);
     
 }
+
+.ad-kakao {
+    width: 320px;
+    margin: 0 auto;
+}
+
