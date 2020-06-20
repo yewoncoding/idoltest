@@ -49,7 +49,7 @@
         <h1 class="title">사진으로 해보는 아이돌 테스트</h1>
         <h2 class="subtitle" style="margin-bottom: 5%">나에게 어울리는 소속사는?</h2>
     </section>
-    
+    <div class="gender-choose">
     <h4 class="pb-2 d-flex justify-content-center">성별 선택</h4>
     <section class="d-flex justify-content-center" style="margin-bottom: 5%">
         <p class="d-flex align-items-center pr-3 gender-name">여자</p>
@@ -63,6 +63,7 @@
         </div>
         <p class="d-flex align-items-center pl-3 gender-name">남자</p>
     </section>
+    </div>
     <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
     <div class="container file-upload">
         <div class="image-upload-wrap">
@@ -110,12 +111,6 @@
         <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-urv7ms6we0qh" data-ad-width="320" data-ad-height="100"></ins>
         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
-    
-    <footer class="footer pt-5 container d-flex justify-content-center">
-        <div>
-            <p>&copy; yewon 2020. All Rights Reserved. </p>
-        </div>
-    </footer>
     <div id="webcam-container"></div>
     <div id="disqus_thread"></div>
     <div class="ad-kakao">
@@ -161,6 +156,7 @@
                     $('.file-upload-content').show();
                     $('.image-title').html(input.files[0].name);
                     $('#loading').show();
+                    $('.gender-choose').hide();
                 };
                 reader.readAsDataURL(input.files[0]);
                 init().then(() => {
@@ -258,7 +254,7 @@
                         break;
                     case "cube":
                         resultTitle = "한 줄로 설명하기 힘든 매력 버무리!"
-                        resultExplain = "화려한 듯 귀여운 게 가능하다니요? 한 가지만 하기 힘들어서 전부 다 가져버린 당신의 매력은 도대체 몇 가지인가요? 볼매라는 말은 당신을 위해 생긴 단어인 것 같아요."
+                        resultExplain = "화려한데 귀여운 게 가능하다니요? 한 가지만 하기 힘들어서 전부 다 가져버린 당신의 매력은 도대체 몇 가지인가요? 볼매라는 말은 당신을 위해 생긴 단어인 것 같아요."
                         resultCeleb = "CUBE상 대표 연예인 : 현아, 수진, 유진"
                         break;
                     default:
@@ -304,6 +300,12 @@
         }
     </script>
 
+    <footer class="footer pt-3 container d-flex justify-content-center">
+        <div>
+            <p>&copy; yewon 2020. All Rights Reserved. </p>
+        </div>
+    </footer>
+    
 </body>
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
