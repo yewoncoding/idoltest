@@ -370,3 +370,7 @@ input:checked + label > .knob {
     margin: 0 auto;
 }
 
+#disqus_thread {
+    padding-left: 5%;
+    padding-right: 5%;
+}
