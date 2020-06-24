@@ -9,6 +9,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
+    <!-- 다국어 처리 -->
+    <script src="//code.jquery.com/jquery-1.8.3.min.js"></script>
+
     <title>아이돌 테스트</title>
     <meta name="naver-site-verification" content="c12efbe6754083f4dca49916d1d8413be80a5e57" />
     <meta name="title" content="아이돌 테스트">
@@ -21,8 +24,7 @@
     <meta property="og:url" content="https://idoltest.site" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="아이돌 테스트" />
-    <meta property="og:description" content="사진으로 내가 어떤 소속사 아이돌상인지 알아보세요! 나는 SM상? JYP상? YG상? CUBE상? 테스트해보고 친구들과 결과를 공유해보세요."
-    />
+    <meta property="og:description" content="사진으로 내가 어떤 소속사 아이돌상인지 알아보세요! 나는 SM상? JYP상? YG상? CUBE상? 테스트해보고 친구들과 결과를 공유해보세요." />
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
@@ -43,83 +45,120 @@
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ee848684ffbdf7a"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-170157192-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170157192-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-  gtag('config', 'UA-170157192-1');
-</script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-170157192-1');
+    </script>
 
 </head>
 
 <body>
     <div class="ad-kakao" style="margin-top: 5%">
-        <ins class="kakao_ad_area" style="display:none;" 
- data-ad-unit    = "DAN-s504suy6dzqo" 
- data-ad-width   = "320" 
- data-ad-height  = "50"></ins> 
-<script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s504suy6dzqo" data-ad-width="320" data-ad-height="50"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
-    <section class="section" style="margin-top: 5%">
-        <h1 class="title">사진으로 해보는 아이돌 테스트</h1>
-        <h2 class="subtitle" style="margin-bottom: 5%">나에게 어울리는 소속사는?</h2>
-    </section>
-    <div class="gender-choose">
-    <h4 class="pb-2 d-flex justify-content-center">성별 선택</h4>
-    <section class="d-flex justify-content-center" style="margin-bottom: 5%">
-        <p class="d-flex align-items-center pr-3 gender-name">여자</p>
-        <div>
-            <input type="checkbox" id="gender">
-            <label for="gender">
-                <span class="knob">
-                    <i></i>
-                </span>
-            </label>
-        </div>
-        <p class="d-flex align-items-center pl-3 gender-name">남자</p>
-    </section>
-    </div>
-    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-    <div class="container file-upload">
-        <div class="image-upload-wrap">
-            <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
-            <div class="drag-text">
-                <img src="image/upload.png" class=" mt-5 upload">
-                <h3 class=" pb-5 upload-text">사진 선택하기
-                    <br>choose photo</h3>
-            </div>
-        </div>
-        <div class="file-upload-content">
-            <img class="file-upload-image" id="face-image" src="#" alt="your image" />
 
-            <div id="loading" class="animated bounce">
-                <div class="spinner-grow" role="status">
-                    <span class="sr-only">Loading...</span>
+    <div id="wrap">
+
+        <div class="lang" style="padding-top: 3%">
+            <button id="lang" data-lang="ko" value="ko">한국어</button>
+            <button id="lang" data-lang="en" value="en">ENG</button>
+        </div>
+
+        <section class="container d-flex flex-column justify-content-center align-items-center">
+            <span class="select-language">Language</span>
+            <select onchange="changeLanguage(this)" class="custom-select col-8">
+                <option value="ko" lang="ko">한국어</option>
+                <option value="en" lang="en">English</option>
+                <option value="es" lang="es">español</option>
+                <option value="ja" lang="ja">日本語</option>
+                <option value="zh" lang="zh">中文</option>
+                <option value="vi" lang="vi">tiếng Việt</option>
+                <option value="id" lang="id">Bahasa Indonesia</option>
+            </select>
+        </section>
+        <script>
+            var ua = navigator.userAgent.toLowerCase();
+
+            function changeLanguage(lang) {
+                if ((navigator.userAgent.indexOf('Mac OS') > 0 && navigator.userAgent.indexOf('Safari') <= 0) || ((navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('wv)') > 0))) {
+                    if (ua.match('android') != null) {
+                        window.open("googlechrome://navigate?url=idoltest.site/" + lang.value + "/index.html"); //android
+                    } else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("ipod") > -1) {
+                        window.location.href = "https://idoltest.site/" + lang.value + "/index.html";
+                    } else {
+                        window.location.href = "https://idoltest.site/" + lang.value + "/index.html";
+                    }
+                } else {
+                    window.location.href = "https://idoltest.site/" + lang.value + "/index.html";
+                }
+            }
+        </script>
+
+        <section class="section">
+            <h1 class="title" data-langNum="0">사진으로 해보는 아이돌 테스트</h1>
+            <h2 class="subtitle" style="margin-bottom: 5%" data-langNum="1">나에게 어울리는 소속사는?</h2>
+        </section>
+        <div class="gender-choose">
+            <h4 class="pb-2 d-flex justify-content-center" data-langNum="2">성별 선택</h4>
+            <section class="d-flex justify-content-center" style="margin-bottom: 5%">
+                <p class="d-flex align-items-center pr-3 gender-name" data-langNum="3">여자</p>
+                <div>
+                    <input type="checkbox" id="gender">
+                    <label for="gender">
+                        <span class="knob">
+                            <i></i>
+                        </span>
+                    </label>
                 </div>
-                <p class="text-center">지금 당신과 어울리는 소속사를 분석중입니다 </p>
+                <p class="d-flex align-items-center pl-3 gender-name" data-langNum="4">남자</p>
+            </section>
+        </div>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <div class="container file-upload">
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                    <img src="image/upload.png" class=" mt-5 upload">
+                    <h3 class=" pb-5 upload-text">사진 선택하기
+                        <br>choose photo</h3>
+                </div>
             </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
 
-            <p class="result-message"></p>
-            <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+                <div id="loading" class="animated bounce">
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p class="text-center" data-langNum="5">지금 당신과 어울리는 소속사를 분석중입니다 </p>
+                </div>
 
-            <!-- Go to www.addthis.com/dashboard to customize your tools -->
-            <div class="addthis_inline_share_toolbox_qglp"></div>
+                <p class="result-message"></p>
+                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
 
-            <div class="image-title-wrap">
-                <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                    <span class="try-again-text">다른 사진으로 또 해보기</span>
-                </button>
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox_qglp"></div>
+
+                <div class="image-title-wrap">
+                    <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
+                        <span class="try-again-text" data-langNum="6">다른 사진으로 또 해보기</span>
+                    </button>
+                </div>
             </div>
         </div>
+
+        <div class="youtube">
+            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link" data-langNum="7">제작 도움 : 조코딩 유튜브 채널</a>
+        </div>
     </div>
-    
-    <div class="youtube">
-        <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link">제작 도움 : 조코딩 유튜브 채널</a>
-    </div>
-   
-    
+
     <div class="ad-kakao">
         <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-qeevp4uxkxtd" data-ad-width="320" data-ad-height="100"></ins>
         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
@@ -223,9 +262,8 @@
             var image = document.getElementById("face-image")
             const prediction = await model.predict(image, false);
             prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
-            // 여기부터 홈페이지에서 쓴 것
             var resultTitle, resultExplain, resultCeleb;
-            if (document.getElementById("gender").checked) {
+            if ((document.getElementById("gender").checked) && (document.currentLanguage = "ko")) {
                 switch (prediction[0].className) {
                     case "sm":
                         resultTitle = "수학의 정석 보다 좋은 미남의 정석!"
@@ -244,6 +282,33 @@
                         break;
                     case "cube":
                         resultTitle = "모든 여성의 마음속에 한자리 차지하는 당신!"
+                        resultExplain = "현실에 있을 것 같지만 없는 얼굴을 가졌네요. 거기다 병약미, 퇴폐미, 소년미까지 뭐 하나 안 갖춘 게 없네요. 사진만 찍었다 하면 남친짤로 변하는 당신은 누가 봐도 CUBE상! "
+                        resultCeleb = "CUBE상 대표 연예인 : 윤두준, 용준형, 육성재, 이던"
+                        break;
+                    default:
+                        resultTitle = ""
+                        resultExplain = "일치하는 소속사를 찾지 못했습니다."
+                        resultCeleb = ""
+                }
+            } else if ((document.getElementById("gender").checked) && (.lang.value = "en")) {
+                switch (prediction[0].className) {
+                    case "sm":
+                        resultTitle = "such a handsome guy!"
+                        resultExplain = "이목구비가 뚜렷하고 반듯하게 생긴 당신은 혹시 얼굴 황금비율? SM에서 두 팔 벌려 환영할 것 같아요. 혹시 거리를 지나다닐 때 모두 돌아보지 않나요? 자꾸 거울이 보고 싶지 않나요? 아마도 얼굴에 잘생김이 묻어서 그럴지도 몰라요."
+                        resultCeleb = "SM상 대표 연예인 : 최시원, 김희철, 수호, 찬열"
+                        break;
+                    case "jyp":
+                        resultTitle = "too charming to get over!"
+                        resultExplain = "당신은 JYP에서 태어난 듯한 유전자를 가지고 계시네요. 이 유전자로 말할 것 같으면 씹덕과 멋짐을 섞어 놓은 유전자예요. 어떻게 귀여운데 멋있죠? 당신의 눈웃음을 보면 여자들의 심장은 하트비트. "
+                        resultCeleb = "JYP상 대표 연예인 : 비, 준호, JB"
+                        break;
+                    case "yg":
+                        resultTitle = "isn't it your name SWAG?"
+                        resultExplain = "그냥 걷고 있을 뿐인데 왠지 YG 사옥으로 가는 것처럼 보여요. 간지라는 단어가 존재하는 이유는 당신을 묘사하기 위해서가 아닐까요? 또한 당신은 볼수록 더 보고 싶은 매력을 가졌네요. 힙하다 힙해!"
+                        resultCeleb = "YG상 대표 연예인 : 지드래곤, 송민호, 최현석"
+                        break;
+                    case "cube":
+                        resultTitle = "everybody's boyfriend!"
                         resultExplain = "현실에 있을 것 같지만 없는 얼굴을 가졌네요. 거기다 병약미, 퇴폐미, 소년미까지 뭐 하나 안 갖춘 게 없네요. 사진만 찍었다 하면 남친짤로 변하는 당신은 누가 봐도 CUBE상! "
                         resultCeleb = "CUBE상 대표 연예인 : 윤두준, 용준형, 육성재, 이던"
                         break;
@@ -317,12 +382,60 @@
         }
     </script>
 
+    <script type="text/javascript">
+        $.lang = {};
+        $.lang.ko = {
+            0: '사진으로 해보는 아이돌 테스트',
+            1: '나에게 어울리는 소속사는?',
+            2: '성별 선택',
+            3: '여자',
+            4: '남자',
+            5: '지금 당신과 어울리는 소속사를 분석중입니다',
+            6: '다른 사진으로 또 해보기',
+            7: '제작 도움 : 조코딩 유튜브 채널',
+        };
+        $.lang.en = {
+            0: 'IDOL test with picture',
+            1: 'which company would suit me?',
+            2: 'choose gender',
+            3: 'female',
+            4: 'male',
+            5: 'analyzing your photo',
+            6: 'try again',
+            7: "helped by 'jocoding' youtube"
+        };
+
+        function setLanguage(currentLanguage) {
+            console.log('setLanguage', arguments);
+            $('[data-langNum]').each(function() {
+                var $this = $(this);
+                $this.html($.lang[currentLanguage][$this.data('langnum')]);
+            });
+        }
+        // 언어 변경
+        $('button').click(function() {
+            var lang = $(this).data('lang');
+            setLanguage(lang);
+        });
+        //change value
+        /*$(document).ready(function() {
+            if (document.value = 'ko') {
+                $('button').click(function() {
+        this.value = 'ko'
+                });
+            } else if (document.value = 'en') {
+    $('button').click(function() {
+        this.value = 'en'
+    });
+}})*/
+    </script>
+
     <footer class="footer pt-3 container d-flex justify-content-center">
         <div>
             <p>&copy; yewon 2020. All Rights Reserved. </p>
         </div>
     </footer>
-    
+
 </body>
 
 <!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)

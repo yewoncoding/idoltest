@@ -108,7 +108,7 @@ body {
 }
 
 .section {
-    margin-top: 100px;
+    margin-top: 1px;
 }
 
 .title {
@@ -363,6 +363,13 @@ input:checked + label > .knob {
 
 .gender-name {
     font-size: 1.5rem
+}
+
+/*language*/
+.lang-select {
+    text-align: center;
+    font-family: AppleGothic;
+    font-size: 1rem;
 }
 
 .ad-kakao {
