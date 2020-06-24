@@ -64,13 +64,6 @@
         <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
     </div>
 
-    <div id="wrap">
-
-        <div class="lang" style="padding-top: 3%">
-            <button id="lang" data-lang="ko" value="ko">한국어</button>
-            <button id="lang" data-lang="en" value="en">ENG</button>
-        </div>
-
         <section class="container d-flex flex-column justify-content-center align-items-center">
             <span class="select-language">Language</span>
             <select onchange="changeLanguage(this)" class="custom-select col-8">
@@ -102,13 +95,13 @@
         </script>
 
         <section class="section">
-            <h1 class="title" data-langNum="0">사진으로 해보는 아이돌 테스트</h1>
-            <h2 class="subtitle" style="margin-bottom: 5%" data-langNum="1">나에게 어울리는 소속사는?</h2>
+            <h1 class="title" >사진으로 해보는 아이돌 테스트</h1>
+            <h2 class="subtitle" style="margin-bottom: 5%" >나에게 어울리는 소속사는?</h2>
         </section>
         <div class="gender-choose">
-            <h4 class="pb-2 d-flex justify-content-center" data-langNum="2">성별 선택</h4>
+            <h4 class="pb-2 d-flex justify-content-center" >성별 선택</h4>
             <section class="d-flex justify-content-center" style="margin-bottom: 5%">
-                <p class="d-flex align-items-center pr-3 gender-name" data-langNum="3">여자</p>
+                <p class="d-flex align-items-center pr-3 gender-name" >여자</p>
                 <div>
                     <input type="checkbox" id="gender">
                     <label for="gender">
@@ -117,7 +110,7 @@
                         </span>
                     </label>
                 </div>
-                <p class="d-flex align-items-center pl-3 gender-name" data-langNum="4">남자</p>
+                <p class="d-flex align-items-center pl-3 gender-name" >남자</p>
             </section>
         </div>
         <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
@@ -137,7 +130,7 @@
                     <div class="spinner-grow" role="status">
                         <span class="sr-only">Loading...</span>
                     </div>
-                    <p class="text-center" data-langNum="5">지금 당신과 어울리는 소속사를 분석중입니다 </p>
+                    <p class="text-center" >지금 당신과 어울리는 소속사를 분석중입니다 </p>
                 </div>
 
                 <p class="result-message"></p>
@@ -148,16 +141,15 @@
 
                 <div class="image-title-wrap">
                     <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
-                        <span class="try-again-text" data-langNum="6">다른 사진으로 또 해보기</span>
+                        <span class="try-again-text" >다른 사진으로 또 해보기</span>
                     </button>
                 </div>
             </div>
         </div>
 
         <div class="youtube">
-            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link" data-langNum="7">제작 도움 : 조코딩 유튜브 채널</a>
+            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link">제작 도움 : 조코딩 유튜브 채널</a>
         </div>
-    </div>
 
     <div class="ad-kakao">
         <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-qeevp4uxkxtd" data-ad-width="320" data-ad-height="100"></ins>
@@ -380,54 +372,6 @@
                 labelContainer.childNodes[i].innerHTML = label + bar;
             }
         }
-    </script>
-
-    <script type="text/javascript">
-        $.lang = {};
-        $.lang.ko = {
-            0: '사진으로 해보는 아이돌 테스트',
-            1: '나에게 어울리는 소속사는?',
-            2: '성별 선택',
-            3: '여자',
-            4: '남자',
-            5: '지금 당신과 어울리는 소속사를 분석중입니다',
-            6: '다른 사진으로 또 해보기',
-            7: '제작 도움 : 조코딩 유튜브 채널',
-        };
-        $.lang.en = {
-            0: 'IDOL test with picture',
-            1: 'which company would suit me?',
-            2: 'choose gender',
-            3: 'female',
-            4: 'male',
-            5: 'analyzing your photo',
-            6: 'try again',
-            7: "helped by 'jocoding' youtube"
-        };
-
-        function setLanguage(currentLanguage) {
-            console.log('setLanguage', arguments);
-            $('[data-langNum]').each(function() {
-                var $this = $(this);
-                $this.html($.lang[currentLanguage][$this.data('langnum')]);
-            });
-        }
-        // 언어 변경
-        $('button').click(function() {
-            var lang = $(this).data('lang');
-            setLanguage(lang);
-        });
-        //change value
-        /*$(document).ready(function() {
-            if (document.value = 'ko') {
-                $('button').click(function() {
-        this.value = 'ko'
-                });
-            } else if (document.value = 'en') {
-    $('button').click(function() {
-        this.value = 'en'
-    });
-}})*/
     </script>
 
     <footer class="footer pt-3 container d-flex justify-content-center">
