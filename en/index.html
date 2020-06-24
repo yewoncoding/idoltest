@@ -1,3 +1,363 @@
-<html><body>
-    hello
-</body></html>
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <title>idol test</title>
+    <meta name="naver-site-verification" content="c12efbe6754083f4dca49916d1d8413be80a5e57" />
+    <meta name="title" content="idol test">
+    <meta name="subject" content="내가 아이돌이라면 어떤 소속사가 어울릴까?">
+    <meta name="description" content="사진으로 내가 어떤 소속사 아이돌상인지 알아보세요! 나는 SM상? JYP상? YG상? CUBE상? 테스트해보고 친구들과 결과를 공유해보세요.">
+    <meta name="keywords" content="아이돌 테스트, 소속사 테스트, 아이돌 소속사 테스트, 인공지능 테스트, 얼굴상, 얼굴상 테스트, 나와 어울리는 소속사, 소속사 찾기, 얼굴로 보는 아이돌상, 얼굴 아이돌, 얼굴 소속사, 아이돌 얼굴, idolface, sm상, jyp상, yg상, cube상, 인공지능 아이돌상, AI 얼굴상, AI 아이돌상">
+    <meta name="author" content="최예원">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="canonical" href="https://idoltest.site" />
+    <meta property="og:url" content="https://idoltest.site" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="아이돌 테스트" />
+    <meta property="og:description" content="사진으로 내가 어떤 소속사 아이돌상인지 알아보세요! 나는 SM상? JYP상? YG상? CUBE상? 테스트해보고 친구들과 결과를 공유해보세요." />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="../favicon.ico" type="image/x-icon">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5ee848684ffbdf7a"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-170157192-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-170157192-1');
+    </script>
+
+</head>
+
+<body>
+    <div class="ad-kakao" style="margin-top: 5%">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-s504suy6dzqo" data-ad-width="320" data-ad-height="50"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+
+        <section class="container d-flex flex-column justify-content-center align-items-center">
+            <span class="select-language">Language</span>
+            <select onchange="changeLanguage(this)" class="custom-select col-8">
+                <option value="ko" lang="ko">한국어</option>
+                <option value="en" lang="en">English</option>
+                <option value="es" lang="es">español</option>
+                <option value="ja" lang="ja">日本語</option>
+                <option value="zh" lang="zh">中文</option>
+                <option value="vi" lang="vi">tiếng Việt</option>
+                <option value="id" lang="id">Bahasa Indonesia</option>
+            </select>
+        </section>
+        <script>
+            var ua = navigator.userAgent.toLowerCase();
+
+            function changeLanguage(lang) {
+                if ((navigator.userAgent.indexOf('Mac OS') > 0 && navigator.userAgent.indexOf('Safari') <= 0) || ((navigator.userAgent.indexOf('Android') > 0 && navigator.userAgent.indexOf('wv)') > 0))) {
+                    if (ua.match('android') != null) {
+                        window.open("googlechrome://navigate?url=idoltest.site/" + lang.value + "/index.html"); //android
+                    } else if (ua.indexOf("iphone") > -1 || ua.indexOf("ipad") > -1 || ua.indexOf("ipod") > -1) {
+                        window.location.href = "https://idoltest.site/" + lang.value + "/index.html";
+                    } else {
+                        window.location.href = "https://idoltest.site/" + lang.value + "/index.html";
+                    }
+                } else {
+                    window.location.href = "https://idoltest.site/" + lang.value + "/index.html";
+                }
+            }
+        </script>
+
+        <section class="section">
+            <h1 class="title" >IDOL test with photo</h1>
+            <h2 class="subtitle" style="margin-bottom: 5%" >which company would suit me?</h2>
+        </section>
+        <div class="gender-choose">
+            <h4 class="pb-2 d-flex justify-content-center" >select gender</h4>
+            <section class="d-flex justify-content-center" style="margin-bottom: 5%">
+                <p class="d-flex align-items-center pr-3 gender-name" >female</p>
+                <div>
+                    <input type="checkbox" id="gender">
+                    <label for="gender">
+                        <span class="knob">
+                            <i></i>
+                        </span>
+                    </label>
+                </div>
+                <p class="d-flex align-items-center pl-3 gender-name" >male</p>
+            </section>
+        </div>
+        <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <div class="container file-upload">
+            <div class="image-upload-wrap">
+                <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
+                <div class="drag-text">
+                    <img src="../image/upload.png" class=" mt-5 upload">
+                    <h3 class=" pb-5 upload-text">
+                        <br>select photo<br>(photos won't store anywhere)</h3>
+                </div>
+            </div>
+            <div class="file-upload-content">
+                <img class="file-upload-image" id="face-image" src="#" alt="your image" />
+
+                <div id="loading" class="animated bounce">
+                    <div class="spinner-grow" role="status">
+                        <span class="sr-only">Loading...</span>
+                    </div>
+                    <p class="text-center" >analyzing your face...</p>
+                </div>
+
+                <p class="result-message"></p>
+                <div id="label-container" class="d-flex flex-column justify-content-around"></div>
+
+                <!-- Go to www.addthis.com/dashboard to customize your tools -->
+                <div class="addthis_inline_share_toolbox_qglp"></div>
+
+                <div class="image-title-wrap">
+                    <button type="button p-2" onclick="window.location.reload()" class="try-again-btn">
+                        <span class="try-again-text" >try again</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="youtube">
+            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link">helped by JOCODING youtube</a>
+        </div>
+
+    <div class="ad-kakao">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-qeevp4uxkxtd" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <div class="ad-kakao">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-urv7ms6we0qh" data-ad-width="320" data-ad-height="100"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <div id="webcam-container"></div>
+    <div id="disqus_thread"></div>
+    <div class="ad-kakao">
+        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-vb9lnh90m7ug" data-ad-width="320" data-ad-height="50"></ins>
+        <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
+    </div>
+    <script>
+        /**
+         *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+         *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+        /*
+        var disqus_config = function () {
+        this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+        this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+        };
+        */
+        (function() { // DON'T EDIT BELOW THIS LINE
+            var d = document,
+                s = d.createElement('script');
+            s.src = 'https://yewon.disqus.com/embed.js';
+            s.setAttribute('data-timestamp', +new Date());
+            (d.head || d.body).appendChild(s);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the
+        <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+    </noscript>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('.image-upload-wrap').hide();
+                    $('.file-upload-image').attr('src', e.target.result);
+                    $('.file-upload-content').show();
+                    $('.image-title').html(input.files[0].name);
+                    $('#loading').show();
+                    $('.gender-choose').hide();
+                };
+                reader.readAsDataURL(input.files[0]);
+                init().then(() => {
+                    predict();
+                    $('#loading').hide();
+                });
+            } else {
+                removeUpload();
+            }
+        }
+
+        function removeUpload() {
+            $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+            $('.file-upload-content').hide();
+            $('.image-upload-wrap').show();
+        }
+        $('.image-upload-wrap').bind('dragover', function() {
+            $('.image-upload-wrap').addClass('image-dropping');
+        });
+        $('.image-upload-wrap').bind('dragleave', function() {
+            $('.image-upload-wrap').removeClass('image-dropping');
+        });
+    </script>
+    <script type="text/javascript">
+        let URL;
+        const urlMale = "https://teachablemachine.withgoogle.com/models/ueLYE-jxx/";
+        const urlFemale = "https://teachablemachine.withgoogle.com/models/4J1fM4hG7/";
+        let model, webcam, labelContainer, maxPredictions;
+        async function init() {
+            if (document.getElementById("gender").checked) {
+                URL = urlMale;
+            } else {
+                URL = urlFemale;
+            }
+            const modelURL = URL + "model.json";
+            const metadataURL = URL + "metadata.json";
+            model = await tmImage.load(modelURL, metadataURL);
+            maxPredictions = model.getTotalClasses();
+            labelContainer = document.getElementById("label-container");
+            for (let i = 0; i < maxPredictions; i++) {
+                var element = document.createElement("div")
+                element.classList.add("d-flex");
+                labelContainer.appendChild(element);
+            }
+        }
+        async function predict() {
+            var image = document.getElementById("face-image")
+            const prediction = await model.predict(image, false);
+            prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+            var resultTitle, resultExplain, resultCeleb;
+            if ((document.getElementById("gender").checked)) {
+                switch (prediction[0].className) {
+                    case "sm":
+                        resultTitle = "such a handsome guy!"
+                        resultExplain = "you are handsome. SM will love you! when you walk down the street, I bet everybody watches you."
+                        resultCeleb = "Representative of SM : Choi Si-won(SJ), Kim Hee-chul(SJ), Suho(exo), Chanyeol(exo)"
+                        break;
+                    case "jyp":
+                        resultTitle = "endless of charm!"
+                        resultExplain = "wow, were you born at JYP? you look mixed cute and cool. how it can be possible? your smile makes people 'Heart Beat'. "
+                        resultCeleb = "Representative of JYP : Rain, Lee Jun-ho(2PM), JB(got7)"
+                        break;
+                    case "yg":
+                        resultTitle = "bigbang of hip!"
+                        resultExplain = "you lead culture. many people want to follow your style. you may be tired because being an icon. you are so hip!"
+                        resultCeleb = "Representative of YG : G-Dragon(bigbang), Song Min-ho(winner), Choi Hyun Suk(treasure)"
+                        break;
+                    case "cube":
+                        resultTitle = "you are a universal lover!"
+                        resultExplain = "you seem to be everywhere but nowhere. you look mixed sexy and boyish. when you take a photo, it looks like someone's boyfriend! "
+                        resultCeleb = "Representative of CUBE : Yoon Doo-joon(highlight), Yong Jun-hyung(highlight), Yook Sungjae(BtoB), DAWN"
+                        break;
+                    default:
+                        resultTitle = ""
+                        resultExplain = "AI couldn't analyze your face."
+                        resultCeleb = ""
+                }
+            } else {
+                switch (prediction[0].className) {
+                    case "sm":
+                        resultTitle = "이수만이 박수치며 환영한다는 수박상!"
+                        resultExplain = "하얀 피부와 부드러운 인상, 청순한 분위기까지 가진 당신은 사슴상이기도 하고 토끼상이기도 하네요. SM 소속이라고 해도 믿겠어요. 특유의 분위기 덕분에 당신은 어디서나 인기쟁이일 것 같아요."
+                        resultCeleb = "SM상 대표 연예인 : 태연, 윤아, 아이린, 예리"
+                        break;
+                    case "jyp":
+                        resultTitle = "JYP 캐스팅 매니저님 여기예요!"
+                        resultExplain = "정석 미녀가 아닐지라도 돋보이는 얼굴을 가진 당신. 순수하면서도 귀여운 매력을 가졌네요. 봐도 봐도 매력의 끝은 보이지 않네요. 언제 어디서 캐스팅 매니저가 당신을 캐스팅할지 몰라요!"
+                        resultCeleb = "JYP상 대표 연예인 : 소희, 수지, 예지, 나연"
+                        break;
+                    case "yg":
+                        resultTitle = "흔치않은 매력적인 얼굴의 소유자!"
+                        resultExplain = "당신은 고급스러우면서도 개성 있는 얼굴을 가졌네요. 당신만의 아우라는 왠지 부잣집 아가씨 혹은 도도한 고양이를 연상시켜요. 당신의 매력에 한 번 빠지면 헤어나기 힘들 것 같아요. "
+                        resultCeleb = "YG상 대표 연예인 : 제니, 씨엘, 엘라(아역), 김희정(배우)"
+                        break;
+                    case "cube":
+                        resultTitle = "한 줄로 설명하기 힘든 매력 버무리!"
+                        resultExplain = "화려한데 귀여운 게 가능하다니요? 한 가지만 하기 힘들어서 전부 다 가져버린 당신의 매력은 도대체 몇 가지인가요? 볼매라는 말은 당신을 위해 생긴 단어인 것 같아요."
+                        resultCeleb = "CUBE상 대표 연예인 : 현아, 수진, 유진"
+                        break;
+                    default:
+                        resultTitle = ""
+                        resultExplain = "AI couldn't analyze your face."
+                        resultCeleb = ""
+                }
+            }
+            var title = "<div class='" + prediction[0].className + "-idol-title'>" + resultTitle + "</div>"
+            var explain = "<div class='idol-explain pt-2'>" + resultExplain + "</div>"
+            var celeb = "<div class='" + prediction[0].className + "-idol-celeb pt-2 pb-2'>" + resultCeleb + "</div>"
+            $('.result-message').html(title + explain + celeb);
+            var barWidth;
+            for (let i = 0; i < maxPredictions; i++) {
+                if (prediction[i].probability.toFixed(2) > 0.1) {
+                    barWidth = Math.round(prediction[i].probability.toFixed(2) * 100) + "%";
+                } else if (prediction[i].probability.toFixed(2) >= 0.01) {
+                    barWidth = "4%"
+                } else {
+                    barWidth = "2%"
+                }
+                var labelTitle;
+                switch (prediction[i].className) {
+                    case "sm":
+                        labelTitle = "SM"
+                        break;
+                    case "jyp":
+                        labelTitle = "JYP"
+                        break;
+                    case "yg":
+                        labelTitle = "YG"
+                        break;
+                    case "cube":
+                        labelTitle = "CUBE"
+                        break;
+                    default:
+                        labelTitle = "알수없음"
+                }
+                var label = "<div class='idol-label d-flex align-items-center'>" + labelTitle + "</div>"
+                var bar = "<div class='bar-container position-relative container'><div class='" + prediction[i].className + "-box'></div><div class='d-flex justify-content-center align-items-center " + prediction[i].className + "-bar' style='width: " + barWidth + "'><span class='d-block percent-text'>" + Math.round(prediction[i].probability.toFixed(2) * 100) + "%</span></div></div>"
+                labelContainer.childNodes[i].innerHTML = label + bar;
+            }
+        }
+    </script>
+
+    <footer class="footer pt-3 container d-flex justify-content-center">
+        <div>
+            <p>&copy; yewon 2020. All Rights Reserved. </p>
+        </div>
+    </footer>
+
+</body>
+
+<!-- Copyright (c) 2020 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+
+</html>
